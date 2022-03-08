@@ -9,7 +9,7 @@ class STFT(torch.nn.Module):
         self._eps = 1e-8
 
     def transform(self, audio):
-        m = numpy.abs(librosa.stft(audio/numpy.abs(audio).max(), 1024, 256))[:-1,:]
+        m = numpy.abs(librosa.stft(audio/numpy.abs(audio).max(), n_fft=1024, hop_length=256))[:-1,:]
         m = numpy.log(m + self._eps)
         m = (((m - m.min())/(m.max() - m.min()) * 2) - 1)
         return (torch.FloatTensor if torch.cuda.is_available() else torch.Tensor)(m * 0.8).unsqueeze(0)

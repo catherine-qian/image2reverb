@@ -26,6 +26,7 @@ def main():
     parser.add_argument("--no_places", action="store_true", help="Don't apply the pre-trained encoder model.")
     parser.add_argument("--constant_depth", type=float, default=None, help="Set depth to constant.")
     parser.add_argument("--n_test", type=float, default=1.0, help="Percentage of test set or the number of test examples.")
+    parser.add_argument("--num_worker", type=int, default=8)
     args = parser.parse_args()
 
     if args.no_places:
@@ -39,8 +40,9 @@ def main():
 
     # Data loading
     cuda = torch.cuda.is_available()
+    print('cuda: '+str(cuda))
     test_set = Image2ReverbDataset(args.dataset, "test", args.spectrogram)
-    test_dataset = torch.utils.data.DataLoader(test_set, num_workers=8, batch_size=args.batch_size) # For now, to test
+    test_dataset = torch.utils.data.DataLoader(test_set, num_workers=args.num_worker, batch_size=args.batch_size) # For now, to test
     
     # Store the test examples
     if not os.path.isdir(args.test_dir):
@@ -79,7 +81,7 @@ def main():
     model.load_state_dict(m["state_dict"])
     
     # Model training
-    trainer = Trainer(gpus=1, limit_test_batches=args.n_test)
+    trainer = Trainer(gpus=1 if cuda else None, limit_test_batches=args.n_test)
     trainer.test(model, test_dataset)
 
 

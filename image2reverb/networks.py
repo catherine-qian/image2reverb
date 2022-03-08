@@ -51,8 +51,11 @@ class Encoder(nn.Module):
             self.model.train()
 
     def forward(self, x):
+        # x: ([1, 3, 224, 224]) input RGB images
         if self._has_depth:
+            # depth image
             d = torch.full((x.shape[0], 1, x.shape[2], x.shape[3]), self._constant_depth, device=x.device) if self._constant_depth is not None else list(self.depth_decoder(self.depth_encoder(x)).values())[-1]
+            # RGB + depth
             x = torch.cat((x, d), 1)
         return self.model.forward(x).unsqueeze(-1).unsqueeze(-1), x
 

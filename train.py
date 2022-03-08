@@ -42,6 +42,7 @@ def main():
         os.makedirs(folder)
 
     cuda = torch.cuda.is_available()
+    print('cuda: '+str(cuda))
     train_set = Image2ReverbDataset(args.dataset, "train", args.spectrogram)
     val_set = Image2ReverbDataset(args.dataset, "val", args.spectrogram)
 

@@ -56,7 +56,7 @@ class Image2Reverb(pl.LightningModule):
         f = self.enc.forward(label)[0]
         z = torch.cat((f, torch.randn((f.shape[0], (self._latent_dimension - f.shape[1]) if f.shape[1] < self._latent_dimension else f.shape[1], f.shape[2], f.shape[3]), device=self.device)), 1)
         fake_spec = self.g(z)
-        d_fake = self.d(fake_spec.detach(), f)
+        d_fake = self.d(fake_spec.detach(), f) # discrinimator
         d_real = self.d(spec, f)
 
         # Train Generator or Encoder
@@ -101,25 +101,25 @@ class Image2Reverb(pl.LightningModule):
         return [enc_optim, g_optim, d_optim], []
     
     def validation_step(self, batch, batch_idx):
-        spec, label, paths = batch
+        spec, label, paths = batch # [1, 1, 512, 512], [1, 3, 224, 224]
         examples = [os.path.basename(s[:s.rfind("_")]) for s, _ in zip(*paths)]
         
         # Forward passes through models
-        f = self.enc.forward(label)[0]
-        z = torch.cat((f, torch.randn((f.shape[0], (self._latent_dimension - f.shape[1]) if f.shape[1] < self._latent_dimension else f.shape[1], f.shape[2], f.shape[3]), device=self.device)), 1)
-        fake_spec = self.g(z)
+        f = self.enc.forward(label)[0] # img input, encoder output ([1, 365, 1, 1])
+        z = torch.cat((f, torch.randn((f.shape[0], (self._latent_dimension - f.shape[1]) if f.shape[1] < self._latent_dimension else f.shape[1], f.shape[2], f.shape[3]), device=self.device)), 1) # ([1, 512, 1, 1])
+        fake_spec = self.g(z) # ([1, 1, 512, 512]), spectrogram
         
         # Get audio
         stft = LogMel() if self.stft_type == "mel" else STFT()
-        y_r = [stft.inverse(s.squeeze()) for s in spec]
+        y_r = [stft.inverse(s.squeeze()) for s in spec] # iSTFT
         y_f = [stft.inverse(s.squeeze()) for s in fake_spec]
 
         # RT60 error (in percentages)
         val_pct = 1
         try:
             f = lambda x : pyroomacoustics.experimental.rt60.measure_rt60(x, 22050)
-            t60_r = [f(y) for y in y_r if len(y)]
-            t60_f = [f(y) for y in y_f if len(y)]
+            t60_r = [f(y) for y in y_r if len(y)] # real IR
+            t60_f = [f(y) for y in y_f if len(y)] # estimate IR
             val_pct = numpy.mean([((t_b - t_a)/t_a) for t_a, t_b in zip(t60_r, t60_f)])
         except:
             pass

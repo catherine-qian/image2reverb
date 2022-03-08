@@ -1,4 +1,5 @@
 # Custom
+mono_odom*/*
 datasets/
 standardized_data/
 scripts/output/

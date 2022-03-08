@@ -5,7 +5,7 @@ from pytorch_lightning import Trainer, loggers
 from pytorch_lightning.callbacks import ModelCheckpoint
 from image2reverb.model import Image2Reverb
 from image2reverb.dataset import Image2ReverbDataset
-
+import time
 
 def main():
     parser = argparse.ArgumentParser()
@@ -23,6 +23,8 @@ def main():
     parser.add_argument("--no_depth", action="store_true", help="Don't apply the pre-trained depth model.")
     parser.add_argument("--no_places", action="store_true", help="Don't load Places365 weights for Encoder.")
     parser.add_argument("--no_t60p", action="store_true", help="Don't apply the T60-style objective term.")
+    parser.add_argument("--num_worker", type=int, default=8)
+
     args = parser.parse_args()
 
     if args.no_places:
@@ -30,6 +32,9 @@ def main():
         
     if args.no_depth:
         args.depthmodel_path = None
+
+    if args.version is None:
+        args.version = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
 
     # Model dir
     folder = args.checkpoints_dir
@@ -40,8 +45,8 @@ def main():
     train_set = Image2ReverbDataset(args.dataset, "train", args.spectrogram)
     val_set = Image2ReverbDataset(args.dataset, "val", args.spectrogram)
 
-    train_dataset = torch.utils.data.DataLoader(train_set, shuffle=True, num_workers=8, pin_memory=cuda, batch_size=args.batch_size)
-    val_dataset = torch.utils.data.DataLoader(val_set, num_workers=8, batch_size=args.batch_size) # For now, to test
+    train_dataset = torch.utils.data.DataLoader(train_set, shuffle=True, num_workers=args.num_worker, pin_memory=cuda, batch_size=args.batch_size)
+    val_dataset = torch.utils.data.DataLoader(val_set, num_workers=args.num_worker, batch_size=args.batch_size) # For now, to test
 
     # Main model
     model = Image2Reverb(args.encoder_path, args.depthmodel_path, d_threshold=args.d_threshold, t60p=not args.no_t60p)
@@ -55,10 +60,11 @@ def main():
     checkpoint_callback = ModelCheckpoint(
         dirpath=os.path.join(args.checkpoints_dir, args.version),
         filename="image2reverb_{epoch:04d}.ckpt",
-        period=10,
+        # period=10,
+        every_n_epochs=10,
         save_top_k=-1,
         verbose=True,
-    )
+    )  # save the model periodically
     
     trainer = Trainer(
         gpus=args.n_gpus if cuda else None,

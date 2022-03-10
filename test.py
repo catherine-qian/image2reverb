@@ -83,7 +83,7 @@ def main():
     
     # Model training
     # trainer = Trainer(gpus=1 if cuda else None, limit_test_batches=args.n_test)
-    trainer = Trainer(gpus=1 if cuda else None, limit_test_batches=3)
+    trainer = Trainer(gpus=1 if cuda else None, limit_test_batches=args.n_test)
     trainer.test(model, test_dataset)
 
 

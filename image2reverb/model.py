@@ -152,14 +152,14 @@ class Image2Reverb(pl.LightningModule):
             json.dump(self.confidence, json_file, indent=4)
 
     def test_step(self, batch, batch_idx):
-        spec, label, paths = batch
+        spec, label, paths = batch # ([1, 1, 512, 512]), ([1, 3, 224, 224]),
         examples = [os.path.basename(s[:s.rfind("_")]) for s, _ in zip(*paths)]
         
         # Forward passes through models
-        f, img = self.enc.forward(label)
+        f, img = self.enc.forward(label) # 365-D feature, ([1, 4, 224, 224])
         img = (img + 1) * 0.5
         z = torch.cat((f, torch.randn((f.shape[0], (self._latent_dimension - f.shape[1]) if f.shape[1] < self._latent_dimension else f.shape[1], f.shape[2], f.shape[3]), device=self.device)), 1)
-        fake_spec = self.g(z)
+        fake_spec = self.g(z) # ([1, 1, 512, 512])
         
         # Get audio
         stft = LogMel() if self.stft_type == "mel" else STFT()
@@ -172,8 +172,8 @@ class Image2Reverb(pl.LightningModule):
         val_pct = []
         for y_real, y_fake in zip(y_r, y_f):
             try:
-                t_a = f(y_real)
-                t_b = f(y_fake)
+                t_a = f(y_real) # t60 - GT
+                t_b = f(y_fake) # t60 - estimate
                 val_pct.append((t_b - t_a)/t_a)
             except:
                 val_pct.append(numpy.nan)
@@ -193,13 +193,13 @@ class Image2Reverb(pl.LightningModule):
 
         for output in outputs:
             for i in range(len(output["test_examples"])):
-                img = output["test_img"][i]
+                img = output["test_img"][i] # ([4, 224, 224])
                 if img.shape[0] == 3:
                     rgb = img
                     img = torch.cat((rgb, torch.zeros((1, rgb.shape[1], rgb.shape[2]), device=self.device)), 0)
-                t60.append(output["test_t60err"][i])
-                spec_images.append(output["test_spec"][i].cpu().squeeze().detach().numpy())
-                audio.append(output["test_audio"][i])
+                t60.append(output["test_t60err"][i]) # (t_b - t_a)/t_a
+                spec_images.append(output["test_spec"][i].cpu().squeeze().detach().numpy()) # ([1, 512, 512])
+                audio.append(output["test_audio"][i])  # (130305,)
                 input_images.append(img.cpu().squeeze().permute(1, 2, 0)[:,:,:-1].detach().numpy())
                 input_depthmaps.append(img.cpu().squeeze().permute(1, 2, 0)[:,:,-1].squeeze().detach().numpy())
                 examples.append(output["test_examples"][i])

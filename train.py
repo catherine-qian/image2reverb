@@ -70,7 +70,7 @@ def main():
     trainer = Trainer(
         gpus=args.n_gpus if cuda else None,
         auto_select_gpus=True,
-        accelerator="ddp" if cuda else None,
+        strategy="ddp" if cuda else None,
         auto_scale_batch_size="binsearch",
         benchmark=True,
         max_epochs=args.niter,

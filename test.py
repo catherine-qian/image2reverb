@@ -27,6 +27,7 @@ def main():
     parser.add_argument("--constant_depth", type=float, default=None, help="Set depth to constant.")
     parser.add_argument("--n_test", type=float, default=1.0, help="Percentage of test set or the number of test examples.")
     parser.add_argument("--num_worker", type=int, default=8)
+
     args = parser.parse_args()
 
     if args.no_places:
@@ -69,7 +70,7 @@ def main():
             pyplot.imsave(os.path.join(d, "input.png"), input_images[i])
             pyplot.imsave(os.path.join(d, "depth.png"), input_depthmaps[i])
 
-            t60_d[example] = t60[i]
+            t60_d[example] = t60[i] # pct
         
         with open(os.path.join(args.test_dir, "t60.json"), "w") as json_file:
             json.dump(t60_d, json_file, indent=4)
@@ -81,7 +82,8 @@ def main():
     model.load_state_dict(m["state_dict"])
     
     # Model training
-    trainer = Trainer(gpus=1 if cuda else None, limit_test_batches=args.n_test)
+    # trainer = Trainer(gpus=1 if cuda else None, limit_test_batches=args.n_test)
+    trainer = Trainer(gpus=1 if cuda else None, limit_test_batches=3)
     trainer.test(model, test_dataset)
 
 

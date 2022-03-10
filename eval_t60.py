@@ -34,7 +34,7 @@ def main():
     numpy.save("t60", t60_err)
     print(scipy.stats.describe(t60_err))
     print('statistics in %')
-    print(scipy.stats.describe(t60_err))
+    print(scipy.stats.describe(t60_err*100))
 
 
 def compare_t60(a, b):

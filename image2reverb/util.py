@@ -10,10 +10,10 @@ def compare_t60(a, b, sr=86):
     try:
         a = a.detach().clone().abs()
         b = b.detach().clone().abs()
-        a = (a - a.min())/(a.max() - a.min())
+        a = (a - a.min())/(a.max() - a.min()) # normalization
         b = (b - b.min())/(b.max() - b.min())
-        t_a = estimate_t60(a, sr)
-        t_b = estimate_t60(b, sr)
+        t_a = estimate_t60(a, sr)  # actual
+        t_b = estimate_t60(b, sr)  # estimate
         return abs((t_b - t_a)/t_a) * 100
     except Exception as error:
         return 100

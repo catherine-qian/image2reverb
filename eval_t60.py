@@ -9,8 +9,9 @@ import pyroomacoustics
 def main():
     # input_dir = sys.argv[1]
     # output_dir = sys.argv[2]
-    input_dir = './datasets/image2reverb/test_B/'
-    output_dir ='./image2reverb_Nonetest/pretrain'
+    
+    input_dir = sys.argv[1] if len(sys.argv)>1 else './datasets/image2reverb/test_B/'
+    output_dir = sys.argv[2] if len(sys.argv)>2 else './image2reverb_Nonetest/small'
 
     files = []
     for d, a, f in os.walk(output_dir):
@@ -33,8 +34,10 @@ def main():
 
 
 def compare_t60(a, b):
-    a, sr = soundfile.read(a)
+    a, sr = soundfile.read(a) # sr=22050, sample rate
     b, sr2 = soundfile.read(b)
+
+
     t_a = pyroomacoustics.experimental.rt60.measure_rt60(a, sr)
     t_b = pyroomacoustics.experimental.rt60.measure_rt60(b, sr2, rt60_tgt=t_a)
     return ((t_b - t_a)/t_a), t_a, t_b

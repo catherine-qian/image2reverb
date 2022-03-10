@@ -9,9 +9,11 @@ import pyroomacoustics
 def main():
     # input_dir = sys.argv[1]
     # output_dir = sys.argv[2]
-    
+
     input_dir = sys.argv[1] if len(sys.argv)>1 else './datasets/image2reverb/test_B/'
     output_dir = sys.argv[2] if len(sys.argv)>2 else './image2reverb_Nonetest/small'
+    print('input dir: '+input_dir)
+    print('output dir: '+output_dir)
 
     files = []
     for d, a, f in os.walk(output_dir):
@@ -30,6 +32,8 @@ def main():
         except Exception as error:
             print("Error.", error)
     numpy.save("t60", t60_err)
+    print(scipy.stats.describe(t60_err))
+    print('statistics in %')
     print(scipy.stats.describe(t60_err))
 
 

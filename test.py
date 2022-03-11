@@ -10,6 +10,7 @@ from pytorch_lightning import Trainer, loggers
 from image2reverb.model import Image2Reverb
 from image2reverb.dataset import Image2ReverbDataset
 from matplotlib import pyplot
+import eval_t603
 
 
 def main():
@@ -85,6 +86,9 @@ def main():
     # trainer = Trainer(gpus=1 if cuda else None, limit_test_batches=args.n_test)
     trainer = Trainer(gpus=1 if cuda else None, limit_test_batches=args.n_test)
     trainer.test(model, test_dataset)
+
+    print('============== start testing ================')
+    eval_t603.main(output_dir=args.test_dir)
 
 
 if __name__ == "__main__":

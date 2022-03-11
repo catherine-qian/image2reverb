@@ -6,17 +6,18 @@ import soundfile
 import pyroomacoustics
 
 
-def main():
+def main(input_dir=None, output_dir=None):
+
     # input_dir = sys.argv[1]
     # output_dir = sys.argv[2]
 
-    input_dir = sys.argv[1] if len(sys.argv)>1 else './datasets/image2reverb/test_B/'
-    output_dir = sys.argv[2] if len(sys.argv)>2 else './image2reverb_Nonetest/small'
+    input_dir = sys.argv[1] if (len(sys.argv) >1 or input_dir) is None else './datasets/image2reverb/test_B/'
+    output_dir = sys.argv[2] if (len(sys.argv) >2 or output_dir) is None else './image2reverb_Nonetest/small'
     print('input dir: '+input_dir)
     print('output dir: '+output_dir)
 
     files = []
-    for d, a, f in os.walk(output_dir):
+    for d, _, f in os.walk(output_dir):
         file = [fn for fn in f if fn.endswith(".wav")]
         if len(file):
             files.append(os.path.join(d, file[0]))
@@ -33,15 +34,14 @@ def main():
             print("Error.", error)
     numpy.save("t60", t60_err)
     print(scipy.stats.describe(t60_err))
-    print('statistics in %')
-    print(scipy.stats.describe(t60_err*100))
+    print('-------- results display -----------')
+    print('mean(%):{:.2f} | std(%):{:.2f}:'.format(scipy.stats.describe(t60_err).mean*100,
+                                               numpy.sqrt(scipy.stats.describe(t60_err).variance)*100))
 
 
 def compare_t60(a, b):
-    a, sr = soundfile.read(a) # sr=22050, sample rate
+    a, sr = soundfile.read(a)
     b, sr2 = soundfile.read(b)
-
-
     t_a = pyroomacoustics.experimental.rt60.measure_rt60(a, sr)
     t_b = pyroomacoustics.experimental.rt60.measure_rt60(b, sr2, rt60_tgt=t_a)
     return ((t_b - t_a)/t_a), t_a, t_b

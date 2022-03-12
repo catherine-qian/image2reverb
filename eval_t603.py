@@ -11,8 +11,8 @@ def main(input_dir=None, output_dir=None):
     # input_dir = sys.argv[1]
     # output_dir = sys.argv[2]
 
-    input_dir = sys.argv[1] if (len(sys.argv) >1 or input_dir is None) else './datasets/image2reverb/test_B/'
-    output_dir = sys.argv[2] if (len(sys.argv) >2 or output_dir is None) else './image2reverb_Nonetest/small'
+    # input_dir = sys.argv[1] if (len(sys.argv) >1 or input_dir is None) else './datasets/image2reverb/test_B/'
+    # output_dir = sys.argv[2] if (len(sys.argv) >2 or output_dir is None) else './image2reverb_Nonetest/small'
     print('input dir: '+input_dir)
     print('output dir: '+output_dir)
 

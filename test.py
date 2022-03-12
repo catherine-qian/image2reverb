@@ -88,7 +88,7 @@ def main():
     trainer.test(model, test_dataset)
 
     print('============== start testing ================')
-    eval_t603.main(output_dir=args.test_dir)
+    eval_t603.main(input_dir='./datasets/image2reverb/test_B/', output_dir=args.test_dir)
 
 
 if __name__ == "__main__":

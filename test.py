@@ -13,8 +13,6 @@ from matplotlib import pyplot
 import eval_t603
 
 
-eval_t603.main(input_dir='./datasets/image2reverb/test_B/', output_dir='./datasets/image2reverb/test_B/')
-
 
 def main():
     parser = argparse.ArgumentParser()

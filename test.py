@@ -91,6 +91,7 @@ def main():
     trainer.test(model, test_dataset)
 
     print('============== start testing ================')
+    print(args)
     eval_t603.main(input_dir='./datasets/image2reverb/test_B/', output_dir=args.test_dir)
 
 

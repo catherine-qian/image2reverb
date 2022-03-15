@@ -68,6 +68,7 @@ def main():
     logger = loggers.TensorBoardLogger(
         args.checkpoints_dir,
         version=args.version
+
     )
 
     checkpoint_callback = ModelCheckpoint(

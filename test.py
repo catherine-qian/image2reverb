@@ -39,7 +39,7 @@ def main():
         args.depthmodel_path = None
 
     if not args.test_dir:
-        args.test_dir = "image2reverb_%stest/" % args.version
+        args.test_dir = "/mntnfs/med_data2/qian/image2rev/image2reverb_%stest/" % args.version
 
     # Data loading
     cuda = torch.cuda.is_available()

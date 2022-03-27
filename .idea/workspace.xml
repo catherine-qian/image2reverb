@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cabfdba0-f2b3-4ebb-957b-b268143382db" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/image2reverb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/image2reverb.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/confidence.json" beforeDir="false" afterPath="$PROJECT_DIR$/confidence.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eval_t603.py" beforeDir="false" afterPath="$PROJECT_DIR$/eval_t603.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image2reverb/mel.py" beforeDir="false" afterPath="$PROJECT_DIR$/image2reverb/mel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image2reverb/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/image2reverb/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/analyze_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/analyze_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/apply_convolution.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/apply_convolution.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/bformat_stereo_to_mono.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/bformat_stereo_to_mono.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/eval_t60.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/eval_t60.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/eval_t602.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/eval_t602.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/format_for_pix2pix.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/format_for_pix2pix.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/get_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/get_images.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/img_to_audio.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/img_to_audio.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/interpretation/compare.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/interpretation/compare.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/interpretation/compare_models.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/interpretation/compare_models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/interpretation/gradcam.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/interpretation/gradcam.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/ir_specstats.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/ir_specstats.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/ir_spectrogram.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/ir_spectrogram.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/ir_visualize.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/ir_visualize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/label_categories.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/label_categories.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/list_ir_file_durations.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/list_ir_file_durations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/make_img_with_depth.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/make_img_with_depth.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/matlab_scripts/IR_cataloguer.m" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/matlab_scripts/IR_cataloguer.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/matlab_scripts/calc_errors.m" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/matlab_scripts/calc_errors.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/process_img.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/process_img.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/resample_pad_librosa.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/resample_pad_librosa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/save_square_spectrograms.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/save_square_spectrograms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/training_distribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/training_distribution.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/umap_map.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/umap_map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/wir2wav.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/wir2wav.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_nn.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_nn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/webpage/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/webpage/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/webpage/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage/src/Abstract.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpage/src/Abstract.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/webpage/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpage/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpage/src/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage/src/Authors.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpage/src/Authors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage/src/GPalette.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpage/src/GPalette.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage/src/Palette.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpage/src/Palette.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage/src/authorlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpage/src/authorlist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/webpage/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpage/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage/src/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/webpage/src/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage/src/metadata.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpage/src/metadata.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage/src/palettes.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpage/src/palettes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage/src/reportWebVitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpage/src/reportWebVitals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpage/src/setupTests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage/src/splash.png" beforeDir="false" afterPath="$PROJECT_DIR$/webpage/src/splash.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpage/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/webpage/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="90725cf1-89c7-41d6-b0f8-acb8f00fe093" />
+  <component name="ProjectId" id="26hBX3N6EB1wOZWthUXlBxDboRI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/opt/anaconda3/envs/python35/bin/python3.5" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Documents/NUS/Research/Code/python/Pycharm" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Documents/NUS/Research/Code/python/Pycharm" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="image2reverb" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/opt/anaconda3/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train.py" />
+      <option name="PARAMETERS" value="--num_worker 0" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cabfdba0-f2b3-4ebb-957b-b268143382db" name="Default Changelist" comment="" />
+      <created>1647865991420</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1647865991420</updated>
+      <workItem from="1647865992543" duration="13142000" />
+      <workItem from="1648183290188" duration="602000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="160" y="-815" width="1086" height="798" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1648176010624">
+      <screen x="-97" y="-900" width="1600" height="900" />
+    </state>
+    <state x="160" y="-815" width="1086" height="798" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1440.875/-97.-900.1600.900@-97.-900.1600.900" timestamp="1648176010624" />
+    <state width="1538" height="298" key="GridCell.Tab.0.bottom" timestamp="1648178117743">
+      <screen x="-97" y="-900" width="1600" height="900" />
+    </state>
+    <state width="1538" height="298" key="GridCell.Tab.0.bottom/0.25.1440.875/-97.-900.1600.900@-97.-900.1600.900" timestamp="1648178117743" />
+    <state width="1538" height="298" key="GridCell.Tab.0.center" timestamp="1648178117742">
+      <screen x="-97" y="-900" width="1600" height="900" />
+    </state>
+    <state width="1538" height="298" key="GridCell.Tab.0.center/0.25.1440.875/-97.-900.1600.900@-97.-900.1600.900" timestamp="1648178117742" />
+    <state width="1538" height="298" key="GridCell.Tab.0.left" timestamp="1648178117741">
+      <screen x="-97" y="-900" width="1600" height="900" />
+    </state>
+    <state width="1538" height="298" key="GridCell.Tab.0.left/0.25.1440.875/-97.-900.1600.900@-97.-900.1600.900" timestamp="1648178117741" />
+    <state width="1538" height="298" key="GridCell.Tab.0.right" timestamp="1648178117742">
+      <screen x="-97" y="-900" width="1600" height="900" />
+    </state>
+    <state width="1538" height="298" key="GridCell.Tab.0.right/0.25.1440.875/-97.-900.1600.900@-97.-900.1600.900" timestamp="1648178117742" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/train.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/train.py</url>
+          <line>49</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/image2reverb/networks.py</url>
+          <line>54</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/image2reverb/model.py</url>
+          <line>47</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/image2reverb/model.py</url>
+          <line>42</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/train.py</url>
+          <line>95</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/image2reverb/model.py</url>
+          <line>97</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/image2reverb/model.py</url>
+          <line>103</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/image2reverb/model.py</url>
+          <line>154</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/image2reverb$image2reverb.coverage" NAME="train Coverage Results" MODIFIED="1648178117648" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

@@ -49,8 +49,8 @@ class Image2Reverb(pl.LightningModule):
         if self._opt:
             opts = self.optimizers()
         
-        spec, label, p = batch # ([1, 1, 512, 512]), ([1, 3, 224, 224]),
-        spec.requires_grad = True # For the backward pass, seems necessary for now
+        spec, label, p = batch # ([1, 1, 512, 512])-RIR, label: RGB image ([1, 3, 224, 224])
+        spec.requires_grad = True  # For the backward pass, seems necessary for now
         
         # Forward passes through models
         f = self.enc.forward(label)[0] # input: label: ([1, 3, 224, 224]), 365-D feature
@@ -61,7 +61,7 @@ class Image2Reverb(pl.LightningModule):
 
         # Train Generator or Encoder
         if optimizer_idx == 0 or optimizer_idx == 1:
-            d_fake2 = self.d(fake_spec.detach(), f) # ([1, 1, 8, 8])
+            d_fake2 = self.d(fake_spec.detach(), f) # discriminator ([1, 1, 8, 8])
             G_loss1 = F.mse_loss(d_fake2, torch.ones(d_fake2.shape, device=self.device))
             G_loss2 = F.l1_loss(fake_spec, spec)
             

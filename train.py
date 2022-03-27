@@ -12,13 +12,13 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--loadckpt", type=str, default=None, help="load checkpoints to train")
     parser.add_argument("--n_gpus", type=int, default=1, help="How many GPUs to train with.")
-    parser.add_argument("--checkpoints_dir", type=str, default="./checkpoints_image2reverb", help="Model location.")
+    parser.add_argument("--checkpoints_dir", type=str, default="checkpoints_image2reverb", help="Model location.")
     parser.add_argument("--batch_size", type=int, default=1, help="Batch size.")
     parser.add_argument("--encoder_path", type=str, default="resnet50_places365.pth.tar",
                         help="Path to pre-trained Encoder ResNet50 model.")
     parser.add_argument("--depthmodel_path", type=str, default="mono_odom_640x192",
                         help="Path to pre-trained depth (from monodepth2) encoder and decoder models.")
-    parser.add_argument("--dataset", type=str, default="./datasets/image2reverb", help="Dataset path.")
+    parser.add_argument("--dataset", type=str, default="datasets/image2reverb", help="Dataset path.")
     parser.add_argument("--niter", type=int, default=100, help="Number of training iters.")
     parser.add_argument("--from_pretrained", type=str, default=None, help="Path to pretrained model.")
     parser.add_argument("--spectrogram", type=str, default="stft", help="Spectrogram type.")

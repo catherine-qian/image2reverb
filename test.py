@@ -31,6 +31,8 @@ def main():
     parser.add_argument("--num_worker", type=int, default=8)
 
     args = parser.parse_args()
+    print('------------------Testing stage-----------------')
+    print(args)
 
     if args.no_places:
         args.encoder_path = None
